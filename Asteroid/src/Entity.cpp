@@ -8,6 +8,6 @@ Entity::Entity(Vector2f p_pos, SDL_Texture* p_tex)
 	currentFrame.x = pos.x; 
 	currentFrame.y = pos.y;
 	currentFrame.w = 0;
-	currentFrame.h = 0; 
+	currentFrame.h = 0;
 	
 }

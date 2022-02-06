@@ -63,7 +63,7 @@ void RenderWindow::render(Entity& entity) //Render texture to screen
 	dest.y = entity.currentFrame.y;
 	dest.w = src.w * 4;
 	dest.h = src.h * 4;
-	SDL_RenderCopy(renderer, entity.tex, NULL, &dest);
+	SDL_RenderCopyEx(renderer, entity.tex, NULL, &dest, entity.getpos().angle, NULL , SDL_FLIP_NONE);
 }
 
 void RenderWindow::update() //Update the screen

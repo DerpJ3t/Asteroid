@@ -6,19 +6,17 @@
 struct Vector2f
 {
 	Vector2f()
-	:x(0.0f), y(0.0f)
 	{}
 
-	Vector2f(float p_x, float p_y)
-		:x(p_x), y(p_y)
-	{
-	}
+	Vector2f(float p_x, float p_y, double p_angle)
+		:x(p_x), y(p_y), angle(p_angle)
+	{}
 
 	void print()
 	{
-		printf("%f , %f", x, y);
+		printf("%f , %f , %d" , x, y, angle);
 	}
 	float x, y;
-	float dp_x , dp_y;
-	float ddp_x , ddp_y;
+	double angle;
+	
 };

@@ -3,7 +3,6 @@
 struct ButtonState
 {
 	bool is_down;
-	bool is_changed;
 };
 
 enum KeyPresses

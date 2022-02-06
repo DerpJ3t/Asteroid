@@ -1,6 +1,5 @@
 #pragma once
-#define is_down(d) input->buttons[d].is_down
-#define is_changed(d) input->buttons[d].is_changed && input->buttons[d].is_down
+#define is_down(k) input->buttons[k].is_down
 
 
 #include <SDL.h>
@@ -9,10 +8,11 @@
 #include "Input.hpp"
 #include "Entity.hpp"
 #include "Math.hpp"
+#include "renderwindow.hpp"
 class Game
 {
 public:
-	void simulate_shooter(Entity& p_entity , Input *input, float dt);
+	void simulate_shooter(Input *input, float dt , RenderWindow& render_window, SDL_Texture* tex);
 private:
 	
 };
