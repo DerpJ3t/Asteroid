@@ -8,15 +8,14 @@ struct Vector2f
 	Vector2f()
 	{}
 
-	Vector2f(float p_x, float p_y, double p_angle)
-		:x(p_x), y(p_y), angle(p_angle)
+	Vector2f(float p_x, float p_y)
+		:x(p_x), y(p_y)
 	{}
 
 	void print()
 	{
-		printf("%f , %f , %d" , x, y, angle);
+		printf("%f , %f \n", x, y);
 	}
 	float x, y;
-	double angle;
 	
 };

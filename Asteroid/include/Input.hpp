@@ -1,11 +1,18 @@
 #pragma once
 
-struct ButtonState
+struct InputState
 {
 	bool is_down;
 };
 
-enum KeyPresses
+struct MousePos
+{
+	int x, y;
+};
+
+
+
+enum InputStates
 {
 	BUTTON_UP,
 	BUTTON_DOWN,
@@ -15,10 +22,12 @@ enum KeyPresses
 	BUTTON_A,
 	BUTTON_S,
 	BUTTON_D,
+	MOUSE_DOWN,
 	BUTTON_COUNT
 };
 
 struct Input
 {
-	ButtonState buttons[BUTTON_COUNT];
+	InputState states[BUTTON_COUNT];
+	MousePos Mouse2f;
 };

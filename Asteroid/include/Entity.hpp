@@ -7,10 +7,14 @@ class RenderWindow;
 class Entity
 {
 public:
-	Entity(Vector2f pos , SDL_Texture* p_tex);
+	Entity(Vector2f pos , SDL_Texture* p_tex ,double p_angle, int size);
 	Vector2f& getpos()
 	{
 		return pos;
+	}
+	double get_angle()
+	{
+		return rotation_angle;
 	}
 	friend class RenderWindow;
 
@@ -19,4 +23,6 @@ private:
 	Vector2f pos;
 	SDL_Rect currentFrame;
 	SDL_Texture* tex;
+	double rotation_angle;
+	int size;
 };

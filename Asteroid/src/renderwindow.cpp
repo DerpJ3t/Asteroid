@@ -7,6 +7,7 @@
 
 
 
+
 RenderWindow::RenderWindow(const char* title, int width, int height)
 	:window(NULL), renderer(NULL) , texture(NULL)
 {	
@@ -61,9 +62,10 @@ void RenderWindow::render(Entity& entity) //Render texture to screen
 	SDL_Rect dest;
 	dest.x = entity.currentFrame.x;
 	dest.y = entity.currentFrame.y;
-	dest.w = src.w * 4;
-	dest.h = src.h * 4;
-	SDL_RenderCopyEx(renderer, entity.tex, NULL, &dest, entity.getpos().angle, NULL , SDL_FLIP_NONE);
+	dest.w = entity.size;
+	dest.h = entity.size;
+
+	SDL_RenderCopyEx(renderer, entity.tex, NULL, &dest, entity.rotation_angle, NULL ,  SDL_FLIP_NONE);
 }
 
 void RenderWindow::update() //Update the screen

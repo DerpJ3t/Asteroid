@@ -16,7 +16,7 @@ public:
 	void update();
 	SDL_Texture* loadTexture(const char* path);
 
-	void draw_rect(int x, int y, int half_size_x, int half_size_y, Uint8 r, Uint8 g, Uint8 b, Uint8 a);
+	
 
 private:
 	SDL_Window* window = NULL;
