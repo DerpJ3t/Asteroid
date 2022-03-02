@@ -53,11 +53,6 @@ void RenderWindow::clear()
 void RenderWindow::render(Entity& entity) //Render texture to screen
 {	
 
-	SDL_Rect src;
-	src.x = 0; 
-	src.y = 0; 
-	src.w = 8;
-	src.h = 8;
 
 	SDL_Rect dest;
 	dest.x = entity.currentFrame.x;
@@ -66,6 +61,17 @@ void RenderWindow::render(Entity& entity) //Render texture to screen
 	dest.h = entity.size;
 
 	SDL_RenderCopyEx(renderer, entity.tex, NULL, &dest, entity.rotation_angle, NULL ,  SDL_FLIP_NONE);
+}
+
+void RenderWindow::render_bullet(Bullet& bullet)
+{
+	SDL_Rect dest;
+	dest.x = bullet.pos_x;
+	dest.y = bullet.pos_y;
+	dest.w = 8;
+	dest.h = 8; 
+
+	SDL_RenderCopy(renderer, bullet.tex, NULL, &dest);
 }
 
 void RenderWindow::update() //Update the screen
@@ -94,10 +100,4 @@ SDL_Renderer* RenderWindow::getRenderer()
 	return renderer;
 }
 
-//void RenderWindow::draw_rect(int x, int y, int half_size_x, int half_size_y, Uint8 r, Uint8 g, Uint8 b, Uint8 a)
-//{	
-//	SDL_Rect fillRect = { x - half_size_x , y - half_size_y, x + half_size_x , y + half_size_y };
-//	SDL_SetRenderDrawColor(renderer, r , g ,b ,a );
-//	SDL_RenderFillRect(renderer, &fillRect);
-//
-//}
+

@@ -1,10 +1,9 @@
 #include "utils.hpp"
 
 
-float Utils::clamp_frame(float dt)
+float Utils::clamp_frame(float fps)
 {
-	if (dt < 0.01f)
-		return 0.01f;
-	
-	return dt;
+	if (fps > 100.0f)
+		fps = 100.0f;
+	return fps;
 }

@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include "Entity.hpp"
+#include "Bullet.hpp"
 
 
 class RenderWindow
@@ -11,6 +12,7 @@ public:
 	SDL_Renderer* getRenderer();
 	RenderWindow(const char* title, int width, int height);
 	void render(Entity& entity);
+	void render_bullet(Bullet& bullet);
 	void close();
 	void clear();
 	void update();

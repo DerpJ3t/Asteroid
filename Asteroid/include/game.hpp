@@ -12,8 +12,8 @@
 class Game
 {
 public:
-	void simulate_shooter(Input* input , float dt , RenderWindow &render_window ,SDL_Texture* tex);
-	void simulate_bullet(Input* input, float dt, RenderWindow& render_window, SDL_Texture* tex);
-	void simulate_bullet_movement(Entity& p_bullet,  float dt);
+	void simulate_shooter(Input* input , float dt , RenderWindow &render_window ,SDL_Texture* p_tex);
+	void simulate_bullet(Input* input, float dt, RenderWindow& render_window, SDL_Texture* p_tex);
+	void bullet_update(float* p_x,float* p_y, double p_angle);
 private:
 };

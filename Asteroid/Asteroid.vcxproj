@@ -160,6 +160,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Bullet.cpp" />
     <ClCompile Include="src\Entity.cpp" />
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\Input.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="src\utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Bullet.hpp" />
     <ClInclude Include="include\Entity.hpp" />
     <ClInclude Include="include\game.hpp" />
     <ClInclude Include="include\Input.hpp" />

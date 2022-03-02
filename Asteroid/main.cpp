@@ -125,8 +125,9 @@ int main(int argc, char* args[])
 				}*/
 				render_window.update();
 				Uint64 frame_end_time = SDL_GetPerformanceCounter();
-				delta_time = utils.clamp_frame((frame_end_time - frame_begin_time) / SDL_GetPerformanceFrequency());
-				std::cout << 1 / delta_time << "FPS" << std::endl;
+				delta_time = ((float)frame_end_time - frame_begin_time) / SDL_GetPerformanceFrequency();
+				float fps = utils.clamp_frame(1.0f / delta_time);
+				std::cout << fps << "FPS" << std::endl;
 				frame_begin_time = frame_end_time;
 			}
 
