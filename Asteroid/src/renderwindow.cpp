@@ -45,6 +45,16 @@ SDL_Texture* RenderWindow::loadTexture(const char* path)
 	return texture;
 	
 }
+
+Mix_Chunk* RenderWindow::loadAudio(const char* path)
+{
+	Mix_Chunk* audio = Mix_LoadWAV(path);
+	if (audio == NULL)
+	{
+		printf("Unable to load audio ... %s \n", path);
+	}
+	return audio;
+}
 void RenderWindow::clear()
 {
 	SDL_RenderClear(renderer); //Clear screen
@@ -55,8 +65,8 @@ void RenderWindow::render(Entity& entity) //Render texture to screen
 
 
 	SDL_Rect dest;
-	dest.x = entity.currentFrame.x;
-	dest.y = entity.currentFrame.y;
+	dest.x = entity.pos.x;
+	dest.y = entity.pos.y;
 	dest.w = entity.size;
 	dest.h = entity.size;
 
@@ -66,8 +76,8 @@ void RenderWindow::render(Entity& entity) //Render texture to screen
 void RenderWindow::render_bullet(Bullet& bullet)
 {
 	SDL_Rect dest;
-	dest.x = bullet.pos_x;
-	dest.y = bullet.pos_y;
+	dest.x = bullet.pos.x;
+	dest.y = bullet.pos.y;
 	dest.w = 8;
 	dest.h = 8; 
 

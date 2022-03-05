@@ -2,10 +2,25 @@
 #include <SDL_image.h>
 #include "Entity.hpp"
 
-Entity::Entity(Vector2f p_pos, SDL_Texture* p_tex, double p_angle, int p_size)
-	:pos(p_pos) , tex(p_tex), rotation_angle(p_angle), size(p_size)
+Entity::Entity(Vector2f pos, SDL_Texture* p_tex, int p_size)
+	:pos(pos), tex(p_tex), size(p_size)
 {
-	currentFrame.x = pos.x; 
-	currentFrame.y = pos.y;
 	
 }
+void Entity::move(float x, float y)
+{
+	pos.x += x;
+	pos.y += y;
+}
+
+void Entity::rotate(double p_angle)
+{
+	rotation_angle = p_angle;
+}
+
+void Entity::pos_reset(float x, float y)
+{
+	pos.x = x;
+	pos.y = y;
+}
+

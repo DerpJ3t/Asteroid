@@ -3,7 +3,9 @@
 #include <SDL.h>
 #include <SDL_image.h>
 
+
 class RenderWindow;
+class Game;
 
 class Bullet
 {
@@ -18,9 +20,9 @@ public:
 	bool out_of_screen(Bullet& bullet);
 
 	friend class RenderWindow;
+	friend class Game;
 private:
 	Vector2f pos;
-	float pos_x, pos_y;
 	SDL_Texture* tex;
 
 };

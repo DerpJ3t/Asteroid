@@ -3,33 +3,33 @@
 
 
 Bullet::Bullet(Vector2f initial_pos, SDL_Texture* p_tex)
-	:tex(p_tex), launch_angle(0.0f), pos_x(0.0f), pos_y(0.0f)
+	:tex(p_tex), launch_angle(0.0f) 
 {
-	pos_x += initial_pos.x;
-	pos_y += initial_pos.y;
+	pos.x = initial_pos.x;
+	pos.y = initial_pos.y;
 }
 
 void Bullet::move(float x, float y)
 {
-	pos_x += x;
-	pos_y += y;
+	pos.x += x;
+	pos.y += y;
 }
 
 bool Bullet::out_of_screen(Bullet& bullet)
 {
-	if (bullet.pos_x + bullet_size > screen_width)
+	if (bullet.pos.x + bullet_size > screen_width)
 	{
 		return true;
 	}
-	if (bullet.pos_x - bullet_size < 0)
+	if (bullet.pos.x - bullet_size < 0)
 	{
 		return true;
 	}
-	if (bullet.pos_y + bullet_size > screen_height)
+	if (bullet.pos.y + bullet_size > screen_height)
 	{
 		return true;
 	}
-	if (bullet.pos_y - bullet_size < 0)
+	if (bullet.pos.y - bullet_size < 0)
 	{
 		return true;
 	}
